@@ -1,0 +1,36 @@
+Project 3: Server-Side Sessions
+Created By: Stephen Lee, Scott Clary, Armando Lopez
+Course: CPSC 449 - Web Back-End Engineering
+Date: March 26, 2021
+Github link: https://github.com/stephenjonglee/Sessions-Project-3
+
+Requirements:
+Language: Python3
+Framework: Bottle
+Foreman
+Any web browser (multiple if you want to do the project)
+
+Instructions to start program:
+   1. Go to project directory.
+   2. Type "foreman start" to start the servers
+           - You should have a notification of two different localhost servers opened: one for user server and other for data server
+   3. Open user server (http://localhost:5000) on web browser and you can play around with the project.
+   4. Open a new terminal in the same directory. Type "./dump.py http://localhost:5100" to view the data server
+
+Description:
+We plan to make a project that will use sessions or cookies. We will make HTTP requests from a Python program and store server-side session data in a separate storage service. The purpose of this is so that user's won't be able to access the data in the user's server. This will also protect users from accessing other user's data since it will not be stored publicly.
+
+The project displays two counter: counter 1 and counter 2.
+Clicking the refresh button will increment counter 1.
+Clicking the Increment Counter 2 button will increment counter 2 and counter 1.
+Clicking the Reset button will reset the counters.
+You can open the project on multiple browsers to create different sessions. The values will be separate.
+
+By using developer tools in the web browser, users can have access to their cookie. The only cookie they will be able to see is their session id, which is created randomly. Each session will have a unique session id. The data values will be stored in the data server as a key-value pair. The key will be the session id and the value will be the data formatted as a dictionary.
+Resetting will delete the session id and create a new one as well as resetting the counters.
+
+For more details, take a look at the screenshots.pdf file.
+
+File Contents:
+app.py   etc    Procfile     README           var
+dump.py  kv.py  screenshots.pdf  views
